@@ -21,12 +21,12 @@ I wanted to use Tailscale, not just read about it. So I set it up end to end, br
 * SSH to the server's public IP times out, even with the correct key
 * The server and my laptop connect directly, with no ports opened on either side
 
-![Laptop and phone on the tailnet](screenshots/01-machines.png)
-![Ping switching to a faster path on its own](screenshots/02-ping-path-switch.png)
-![Security group with zero inbound rules](screenshots/03-zero-inbound-rules.png)
-![Server joined the tailnet](screenshots/04-acme-tools-joined.png)
-![SSH over Tailscale](screenshots/05-ssh-over-tailscale.png)
-![SSH to the public IP times out](screenshots/06-public-ip-timeout.png)
+![Laptop and phone on the tailnet](screenshots/01-machines.jpg)
+![Ping switching to a faster path on its own](screenshots/02-ping-path-switch.jpg)
+![Security group with zero inbound rules](screenshots/03-zero-inbound-rules.jpg)
+![Server joined the tailnet](screenshots/04-acme-tools-joined.jpg)
+![SSH over Tailscale](screenshots/05-ssh-over-tailscale.jpg)
+![SSH to the public IP times out](screenshots/06-public-ip-timeout.jpg)
 
 ### How it works, in plain terms
 
