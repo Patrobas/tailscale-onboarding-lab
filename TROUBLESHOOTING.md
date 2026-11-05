@@ -15,6 +15,13 @@ After fixing the flag, the server still did not join. In AWS CloudShell I could 
 ## How I found both
 I read the script line by line instead of guessing. Reading it slowly is what showed both mistakes.
 
+## What the boot log showed
+The server's boot log (EC2 console output) recorded the failure. The join command ended with this error, auth key hidden:
+
+    /bin/bash: curl -fsSL https://tailscale.com/install.sh | sh tailscale up --authkey=<KEY> --hosyname=acme-tools --ssh: No such file or directory
+
+Bash treated the whole line as a file name instead of running it, so Tailscale never started and the auth key was never used. The line also shows the `--hosyname` typo and a space inside the key.
+
 ## The fix
 I corrected the flag to `--hostname`, removed the space from the key, and tried again.
 
