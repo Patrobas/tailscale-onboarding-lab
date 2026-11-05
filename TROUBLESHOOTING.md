@@ -23,8 +23,7 @@ The server's boot log (EC2 console output) recorded the failure. The join comman
 Bash treated the whole line as a file name instead of running it, so Tailscale never started and the auth key was never used. The line also shows the `--hosyname` typo and a space inside the key.
 
 ## The fix
-I corrected the flag to `--hostname`, removed the space from the key, and tried again.
-
+I corrected the flag to `--hostname` and removed the space from the auth key. Auth keys are single use and the first one was wasted, so I made a new one. The startup script only runs the first time a server boots, so instead of editing the old server I terminated it and launched a replacement with the fixed script.
 ## How I confirmed it worked
 The server appeared in the Machines list as acme-tools, and I connected to it with SSH over Tailscale. SSH to the public IP still timed out, as it should.
 
