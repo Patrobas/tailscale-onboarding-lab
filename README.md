@@ -48,5 +48,5 @@ See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 ## Notes
 
-* No auth keys are stored in this repo. The script uses a placeholder.
+* No auth keys are stored in this repo.
 * Emails and public IPs are blurred in the screenshots.
