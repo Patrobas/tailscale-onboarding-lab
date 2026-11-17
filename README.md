@@ -42,14 +42,18 @@ See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 A second, separate lab reaches a private EC2 instance with no public IP address from my Windows laptop, through a Tailscale subnet router in the same VPC. It covers the VPC layout, subnet routing and a troubleshooting lesson about a failed ping.
 
+## Related lab: private subnet access with a subnet router
+
+A second, separate lab reaches a private EC2 instance with no public IP address from my Windows laptop, through a Tailscale subnet router in the same VPC. It covers the VPC layout, subnet routing and a troubleshooting lesson about a failed ping.
+
 See [aws-private-subnet-lab](aws-private-subnet-lab/).
+
 ## What's next
 
-* **Phase 2:** Run a small dashboard in Docker and share it only inside the tailnet
-* **Phase 3:** Move it to Kubernetes with the Tailscale operator
-* **Phase 4:** Access rules as code, kept in GitHub and deployed with GitHub Actions
-* **Phase 5:** Break things on purpose and document the fixes
-* **Phase 6:** Customer docs: onboarding guide, FAQ, runbook and a QBR summary
+* **Break things on purpose:** Use the subnet router lab to introduce failures one at a time, such as an unapproved route, an access policy mistake, a wrong port, a stopped service and forwarding turned off, and document how I found each one
+* **Access rules as code:** Keep the Tailscale policy file in GitHub, with tests, and deploy it with GitHub Actions
+* **Customer docs:** Onboarding guide, FAQ, runbook and a QBR summary
+
 
 ## Notes
 
