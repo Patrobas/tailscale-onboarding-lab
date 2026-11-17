@@ -38,9 +38,6 @@ I saw this on my own network. Pings from my laptop to my phone first went throug
 
 See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
-## Related lab: private subnet access with a subnet router
-
-A second, separate lab reaches a private EC2 instance with no public IP address from my Windows laptop, through a Tailscale subnet router in the same VPC. It covers the VPC layout, subnet routing and a troubleshooting lesson about a failed ping.
 
 ## Related lab: private subnet access with a subnet router
 
@@ -53,7 +50,6 @@ See [aws-private-subnet-lab](aws-private-subnet-lab/).
 * **Break things on purpose:** Use the subnet router lab to introduce failures one at a time, such as an unapproved route, an access policy mistake, a wrong port, a stopped service and forwarding turned off, and document how I found each one
 * **Access rules as code:** Keep the Tailscale policy file in GitHub, with tests, and deploy it with GitHub Actions
 * **Customer docs:** Onboarding guide, FAQ, runbook and a QBR summary
-
 
 ## Notes
 
