@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="t d">
+<title id="t">Private EC2 instance reached through a Tailscale subnet router</title>
+<desc id="d">A Windows laptop connects over a Tailscale tunnel to a subnet router in the public subnet of an AWS VPC. The router forwards TCP 8080 and SSH to a private EC2 instance with no public IP address.</desc>
+<rect width="1200" height="1200" fill="#ffffff"/>
+<style>
+text{font-family:Helvetica,Arial,FreeSans,sans-serif;fill:#1e293b}
+.title{font-size:58px;font-weight:bold}
+.sub{font-size:32px;fill:#475569}
+.h{font-size:32px;font-weight:bold}
+.b{font-size:30px}
+.s{font-size:26px;fill:#334155}
+.lab{font-size:26px;fill:#475569}
+.foot{font-size:23px;fill:#64748b}
+.req{stroke:#2563eb;stroke-width:6;fill:none}
+.rep{stroke:#c2410c;stroke-width:6;fill:none}
+</style>
+
+<text x="60" y="80" class="title">Private EC2, no public IP</text>
+<text x="60" y="128" class="sub">Reached through a Tailscale subnet router</text>
+
+<!-- laptop -->
+<rect x="300" y="160" width="600" height="100" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/>
+<text x="600" y="206" class="h" text-anchor="middle">Windows laptop</text>
+<text x="600" y="243" class="s" text-anchor="middle">Tailscale client, web browser</text>
+
+<!-- AWS container -->
+<rect x="40" y="340" width="1120" height="570" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="3"/>
+<text x="70" y="385" class="h">AWS VPC 10.60.0.0/16</text>
+<text x="70" y="418" class="s">ca-west-1 (Calgary)</text>
+
+<!-- public subnet -->
+<rect x="80" y="440" width="1040" height="190" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="3"/>
+<text x="110" y="484" class="h">Public subnet 10.60.1.0/24</text>
+<text x="110" y="528" class="b">tslab-router  10.60.1.150</text>
+<text x="110" y="565" class="s">Tailscale subnet router, IP forwarding on</text>
+<text x="110" y="600" class="s">Route 10.60.2.0/24 advertised and approved</text>
+
+<!-- private subnet -->
+<rect x="80" y="710" width="1040" height="170" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+<text x="110" y="754" class="h">Private subnet 10.60.2.0/24</text>
+<text x="110" y="798" class="b">tslab-app  10.60.2.70  (no public IP)</text>
+<text x="110" y="835" class="s">Python HTTP server on port 8080</text>
+
+<!-- arrows laptop <-> router -->
+<path d="M540 260 V430" class="req"/><path d="M540 440 l-14 -22 h28 z" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M660 440 V270" class="rep"/><path d="M660 260 l-14 22 h28 z" fill="#c2410c" stroke="#c2410c" stroke-width="2"/>
+<text x="515" y="310" class="lab" text-anchor="end">Tailscale tunnel</text>
+<text x="685" y="310" class="lab">HTTP response</text>
+
+<!-- arrows router <-> app -->
+<path d="M540 630 V700" class="req"/><path d="M540 710 l-14 -22 h28 z" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M660 710 V640" class="rep"/><path d="M660 630 l-14 22 h28 z" fill="#c2410c" stroke="#c2410c" stroke-width="2"/>
+<text x="515" y="678" class="lab" text-anchor="end">TCP 8080 or SSH 22</text>
+<text x="685" y="678" class="lab">HTTP :8080 response (no TLS)</text>
+
+<!-- lesson -->
+<rect x="40" y="940" width="1120" height="150" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="70" y="993" class="h" style="font-size:38px">Ping failed. The web page loaded.</text>
+<text x="70" y="1040" class="b" style="font-size:28px">The security group allows TCP 22 and 8080, not ICMP.</text>
+<text x="70" y="1076" class="s" style="font-size:24px">Tailscale encrypts laptop to router only.</text>
+
+<text x="60" y="1135" class="foot">Arrows show logical flow, not a packet capture.</text>
+<text x="60" y="1168" class="foot">Learning lab, not a production design.</text>
+</svg>
