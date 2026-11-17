@@ -46,6 +46,11 @@ See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 * **Phase 5:** Break things on purpose and document the fixes
 * **Phase 6:** Customer docs: onboarding guide, FAQ, runbook and a QBR summary
 
+## Related lab: private subnet access with a subnet router
+
+A second, separate lab reaches a private EC2 instance with no public IP address from my Windows laptop, through a Tailscale subnet router in the same VPC. It covers the VPC layout, subnet routing and a troubleshooting lesson about a failed ping.
+
+See [aws-private-subnet-lab](aws-private-subnet-lab/).
 ## Notes
 
 * No auth keys are stored in this repo.
